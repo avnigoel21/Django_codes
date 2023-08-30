@@ -1,0 +1,21 @@
+1) Python install
+
+2) Install virtual env -> pip install virtualenv
+3) To start virtual env -> virtualenv env
+4) go to scripts folderinside env folder -> activate 
+
+5) Install django -> pip install Django
+6) django --version
+
+7) Create project(website) -> django-admin startproject core
+
+8) cd core
+
+9) open vs code -> code .
+
+10) creating app inside project-> python manage.py startapp home
+11) creating app inside project-> python manage.py startapp accounts
+12) creating app inside project-> python manage.py startapp products
+
+
+13) running any django project -> python manage.py runserver

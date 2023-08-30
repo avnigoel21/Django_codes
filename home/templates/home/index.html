@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+        border: 1px solid;
+        }</style>
+</head>
+
+<body>
+    <h1 style="background-color: blueviolet;">Hi i am Avni from Django server</h1>
+    <p>hi i am a paragraph</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, quidem facilis. Recusandae, nam dignissimos at
+        perferendis rem modi alias! Obcaecati ex esse iusto, accusantium velit aperiam perspiciatis exercitationem
+        delectus repudiandae?</p>
+
+
+    {{text}}
+
+    <hr>
+
+    <!-- {{peoples}} -->
+
+
+
+    <table>
+        <tr>
+            <th>Serial No.</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+
+        {% for people in peoples %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{people.name}}</td>
+            <td>{{people.age}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+
+</body>
+
+</html>
