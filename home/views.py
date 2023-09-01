@@ -13,10 +13,12 @@ def home(request):
         {'name' : 'Sandeep'  , 'age' : 30},
     ]
 
+    vegetables = ['pumpkin' , 'tomato' , 'potato']
+
     # for people in peoples:
     #     print(people)
         
-    return render(request , 'home/index.html' , context={'text' : text , 'peoples' : peoples })
+    return render(request , 'home/index.html' , context={'text' : text , 'peoples' : peoples , 'vegetables' : vegetables })
 
 
 def success_page(request):
@@ -25,4 +27,8 @@ def success_page(request):
     return HttpResponse("Hey this is success page.")
 
 
+def contact(request):
+    return render(request , 'home/contact.html')
 
+def about(request):
+    return render(request , 'home/about.html')

@@ -7,14 +7,14 @@
 5) Install django -> pip install Django
 6) django --version
 
-7) Create project(website) -> django-admin startproject core
+7) Create project(website) -> django-admin startproject mywebsite
 
 8) cd core
 
 9) open vs code -> code .
 
 10) creating app inside project-> python manage.py startapp home
-11) creating app inside project-> python manage.py startapp accounts
+11) creating app inside project-> python manage.py startapp accounts -> login/logout
 12) creating app inside project-> python manage.py startapp products
 
 

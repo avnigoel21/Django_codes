@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+{%  extends "base.html" %}
+{% block start %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        table, th, td {
-        border: 1px solid;
-        }</style>
-</head>
-
-<body>
     <h1 style="background-color: blueviolet;">Hi i am Avni from Django server</h1>
     <p>hi i am a paragraph</p>
 
@@ -19,6 +8,7 @@
         perferendis rem modi alias! Obcaecati ex esse iusto, accusantium velit aperiam perspiciatis exercitationem
         delectus repudiandae?</p>
 
+    <hr>
 
     {{text}}
 
@@ -26,13 +16,12 @@
 
     <!-- {{peoples}} -->
 
-
-
     <table>
         <tr>
             <th>Serial No.</th>
             <th>Name</th>
             <th>Age</th>
+            <th>Can Vote</th>
         </tr>
 
         {% for people in peoples %}
@@ -40,13 +29,40 @@
             <td>{{forloop.counter}}</td>
             <td>{{people.name}}</td>
             <td>{{people.age}}</td>
+            <td>
+                {% if people.age >= 18 %}
+                👍
+                {% else %}
+                👎
+                {% endif %}
+            </td>
         </tr>
         {% endfor %}
     </table>
 
 
+    <hr>
 
 
-</body>
+    <p>
+        {% if "pumpkin" in vegetables %}
+            yes  available
+        {% elif "tomato" in vegetables %}
+            yes available
+        {% else %}
+            Not available
+        {% endif %}
+    </p>
 
-</html>
+    <hr>
+
+    <a href="/about">
+        About Us 
+    </a>
+    <br>
+    <a href="/contact">
+        Contact Us
+    </a>
+
+
+{% endblock %}

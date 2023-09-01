@@ -24,6 +24,10 @@ from home.views import *
 urlpatterns = [
     path('' , home ),
 
+    path('contact/' , contact ),
+
+    path('about/' , about ),
+    
     path('success_page/' , success_page),
     # path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon/favicon.ico'))),
 
