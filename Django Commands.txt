@@ -19,3 +19,8 @@
 
 
 13) running any django project -> python manage.py runserver
+
+
+* Every time you create a model - you have to enter 2 commands
+ a) python manage.py makemigrations
+ b) python manage.py migrate
