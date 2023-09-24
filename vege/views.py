@@ -13,19 +13,19 @@ def receipes(request):
         # print(receipe_name)
         # print(receipe_description)
         
-        # Recipe.objects.create(
-        #     receipe_name = receipe_name,
-        #     receipe_description = receipe_description,
-        #     receipe_image = receipe_image
-        # )
+        Recipe.objects.create(
+            receipe_name = receipe_name,
+            receipe_description = receipe_description,
+            receipe_image = receipe_image
+        )
 
         return redirect('/receipes')
 
-    # queryset = Recipe.objects.all()
-    # context = {'receipes' : queryset}
+    queryset = Recipe.objects.all()
+    context = {'receipes' : queryset}
 
 
-    return render (request , 'receipes/receipes.html' )
+    return render (request , 'receipes/receipes.html' , context )
 
 
 
