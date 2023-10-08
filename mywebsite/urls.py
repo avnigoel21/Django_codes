@@ -35,6 +35,10 @@ urlpatterns = [
     path('contact/' , contact ),
 
     path('about/' , about ),
+
+
+    path('login/' , login_page ),
+    path('register/' , register ),
     
     path('success_page/' , success_page),
 

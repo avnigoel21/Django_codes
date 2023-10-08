@@ -22,6 +22,11 @@ def receipes(request):
         return redirect('/receipes')
 
     queryset = Recipe.objects.all()
+
+    if request.GET.get('search'):
+        queryset = queryset.filter(receipe_name__icontains = request.GET.get('search'))
+
+
     context = {'receipes' : queryset}
 
 
@@ -36,6 +41,7 @@ def delete_receipes(request, id):
     return redirect('/receipes')
 
 def update_receipes(request, id):
+
 
     queryset = Recipe.objects.get(id = id)
 
@@ -57,5 +63,14 @@ def update_receipes(request, id):
     context = {'receipe' : queryset}
 
     return render (request , 'receipes/update_receipes.html' , context )
+
+
+
+def login_page(request):
+    return render(request, 'receipes/login.html')
+
+
+def register(request):
+    return render(request, 'receipes/register.html')
 
 
