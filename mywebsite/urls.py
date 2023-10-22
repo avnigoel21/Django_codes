@@ -39,6 +39,8 @@ urlpatterns = [
 
     path('login/' , login_page ),
     path('register/' , register ),
+
+    path('logout/' , logout_page ),
     
     path('success_page/' , success_page),
 
