@@ -47,3 +47,128 @@ IndexError: list index out of range
 >>> Recipe.objects.filter(receipe_view_count__lte = 70)
 <QuerySet [<Recipe: Recipe object (10)>, <Recipe: Recipe object (11)>, <Recipe: Recipe object (12)>]>
 >>>
+
+
+
+
+
+
+
+
+
+
+
+
+(env) C:\Users\admin\Desktop\Django_Project\mywebsite>python manage.py shell
+Python 3.11.4 (tags/v3.11.4:d2340ef, Jun  7 2023, 05:45:37) [MSC v.1934 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from vege.models import *
+>>> queryset = Student.objects.filter(student_name__startswith = "ama")
+>>> queryset
+<QuerySet [<Student: Amanda Harrell>]>
+>>> queryset = Student.objects.filter(student_name__startswith = "av")
+>>> queryset
+<QuerySet [<Student: Avni>]>
+>>> queryset = Student.objects.filter(student_name__startswith = "a")
+>>> queryset
+<QuerySet [<Student: Aaron Harris>, <Student: Alicia Sutton>, <Student: Amanda Harrell>, <Student: Amber Watson>, <Student: Amy Black>, <Student: Amy Blair>, <Student: Amy Hardy>, <Student: Amy Nolan>, <Student: Angelica Brown>, <Student: Anne Hill>, <Student: Antonio Munoz>, <Student: Antonio Vaughn>, <Student: April Wiley>, <Student: Ashley Perry>, <Student: Austin Williams>, <Student: Avni>]>
+>>> queryset = Student.objects.filter(student_email__endswith = ".com")
+>>> queryset
+<QuerySet [<Student: Amanda Harrell>, <Student: Amy Black>, <Student: Amy Hardy>, <Student: Antonio Munoz>, <Student: April Wiley>, <Student: Ashley Perry>, <Student: Avni>, <Student: Brittany Whitaker>, <Student: Catherine Jones>, <Student: Cynthia Walker>, <Student: David Lambert>, <Student: Edward Carr>, <Student: Edward Webb>, <Student: Gary Hubbard>, <Student: James Novak>, <Student: Jane Chan DDS>, <Student: Javier Gonzalez>, <Student: Jeffrey Hicks>, <Student: Jonathan Wells>, <Student: Keith Morales>, '...(remaining elements truncated)...']>
+>>> for q in queryset:
+...     print(q.student_email)
+...
+zimmermanjustin@example.com
+tamarabauer@example.com
+eric07@example.com
+erica24@example.com
+davidwright@example.com
+denisegibson@example.com
+avni@gmail.com
+amandamarquez@example.com
+basskelli@example.com
+williegutierrez@example.com
+johnsonmargaret@example.com
+ycarroll@example.com
+beckymayo@example.com
+sarahmurray@example.com
+jennifer96@example.com
+charles10@example.com
+spierce@example.com
+eadams@example.com
+markgreen@example.com
+hobbsalan@example.com
+john06@example.com
+megan83@example.com
+jorgehenderson@example.com
+pittssarah@example.com
+karen49@example.com
+smithstephanie@example.com
+jlester@example.com
+john08@example.com
+sandrakelly@example.com
+crystal79@example.com
+rjohnson@example.com
+kandrews@example.com
+zjones@example.com
+myersthomas@example.com
+brownmichele@example.com
+>>> queryset = Student.objects.filter(student_email__endswith = ".org")
+>>> queryset
+<QuerySet [<Student: Aaron Harris>, <Student: Amber Watson>, <Student: Anne Hill>, <Student: Antonio Vaughn>, <Student: Austin Williams>, <Student: Breanna Love>, <Student: Eric Baker>, <Student: Erin Adams>, <Student: Isaac Graham>, <Student: Jeffrey Parrish>, <Student: Jeffrey Phelps>, <Student: Jennifer Rodriguez>, <Student: Jerry Harmon>, <Student: Jose Reed>, <Student: Julie Fitzpatrick>, <Student: Kelly Kim>, <Student: Kimberly Weber>, <Student: Kyle Bailey>, <Student: Lauren Rowland>, <Student: Melissa Mason>, '...(remaining elements truncated)...']>
+>>> for q in queryset:
+...     print(q.student_name)
+...
+Aaron Harris
+Amber Watson
+Anne Hill
+Antonio Vaughn
+Austin Williams
+Breanna Love
+Eric Baker
+Erin Adams
+Isaac Graham
+Jeffrey Parrish
+Jeffrey Phelps
+Jennifer Rodriguez
+Jerry Harmon
+Jose Reed
+Julie Fitzpatrick
+Kelly Kim
+Kimberly Weber
+Kyle Bailey
+Lauren Rowland
+Melissa Mason
+Michael Moore
+Monica Briggs
+Mr. Aaron Cruz
+Rachel Osborne
+Rebecca Thompson
+Robert Lee
+Ryan Booker
+Sara Griffin
+Sarah Vincent
+Steven Goodwin
+Theresa Salazar
+Travis Walker
+>>> queryset = Student.objects.filter(student_email__endswith = ".google")
+>>> queryset
+<QuerySet []>
+>>> queryset = Student.objects.filter(student_name__icontains = "vn")
+>>> queryset
+<QuerySet [<Student: Avni>]>
+>>> queryset = Student.objects.filter(student_name__icontains = "v")
+>>> queryset
+<QuerySet [<Student: Antonio Vaughn>, <Student: Avni>, <Student: Breanna Love>, <Student: David Lambert>, <Student: James Novak>, <Student: Javier Gonzalez>, <Student: Matthew Davis>, <Student: Sarah Vincent>, <Student: Shane Davis>, <Student: Steven Goodwin>, <Student: Steven Turner>, <Student: Timothy Vang>, <Student: Travis Walker>, <Student: Vanessa Harris>, <Student: Vanessa Klein>, <Student: Yvonne Schwartz>]>
+>>> queryset = Student.objects.filter(student_address__icontains = "delhi")
+>>> queryset
+<QuerySet [<Student: Avni>]>
+>>> queryset = Student.objects.filter(student_address__icontains = "Christine")
+>>> queryset
+<QuerySet [<Student: Amy Hardy>]>
+>>> queryset[0].student_id
+<StudentID: STU-0879>
+>>> queryset[0].id
+90
+>>>
