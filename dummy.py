@@ -1,8 +1,8 @@
-# number = 2
-# name = "avni"
-# print("student id is" , number)
+number = 2
+name = "avni"
+print("student id is" , number)
 
-# print(f"student {name}{number} id is {number}")
+print(f"student {name} id is {number}")
 
 # # STU-0001
 # print(f"STU-{number}")
