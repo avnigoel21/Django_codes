@@ -50,6 +50,8 @@ urlpatterns = [
 
     path('update_receipes/<id>/' , update_receipes),
 
+    path('students/' , get_students),
+
 
     # path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon/favicon.ico'))),
 
