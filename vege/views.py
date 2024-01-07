@@ -15,7 +15,9 @@ from django.db.models import Sum
 
 from django.core.paginator import Paginator
 
+from django.contrib.auth import get_user_model
 
+User = get_user_model()
 
 # Create your views here.
 @login_required(login_url="/login/")
