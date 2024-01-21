@@ -54,6 +54,8 @@ urlpatterns = [
 
     path('see_marks/<student_id>' , see_marks),
 
+    path('send_email' , send_email, name= "send_email" ),
+
 
     # path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon/favicon.ico'))),
 
