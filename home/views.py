@@ -1,11 +1,20 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
-from  .utils import send_mail_to_client
+from  .utils import send_mail_to_client, send_email_with_attachment
+from django.conf import settings
 
+
+# def send_email(request):
+#     send_mail_to_client()
+#     return redirect('/')
 
 def send_email(request):
-    send_mail_to_client()
+    subject = "This email if from django server with Attachment"
+    message = "Hey, please find this attach file with this email"
+    recipent_list = ["avnigoel98@gmail.com" , 'achimote2021@gmail.com']
+    file_path = f"{settings.BASE_DIR}/main.xlsx"
+    send_email_with_attachment(subject, message, recipent_list, file_path)
     return redirect('/')
 
 
